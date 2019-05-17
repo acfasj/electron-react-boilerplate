@@ -1,12 +1,14 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+const config = require('./config');
 
 module.exports = {
-  entry: './src/renderer/index.js',
+  target: 'electron-renderer',
+  entry: path.resolve(__dirname, '..', 'src/renderer/index.js'),
   output: {
-    filename: 'bundle.[hash].js',
-    path: path.join(__dirname, '/dist'),
+    filename: 'renderer.[hash].js',
+    path: config.distRenderer
   },
   resolve: {
     extensions: ['.js', '.jsx', '.json'],
