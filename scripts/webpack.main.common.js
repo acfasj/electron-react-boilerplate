@@ -1,5 +1,4 @@
 const config = require('./config');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
 const path = require('path');
 
 
@@ -8,10 +7,7 @@ module.exports = {
   target: 'electron-main',
   entry: path.resolve(__dirname, '..', 'src/main/index.js'),
   output: {
-    path: config.distMain,
+    path: config.buildMain,
     filename: 'main.js',
   },
-  plugins: [
-    new CleanWebpackPlugin(),
-  ],
 };

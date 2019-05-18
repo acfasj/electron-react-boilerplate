@@ -8,7 +8,7 @@ module.exports = {
   entry: path.resolve(__dirname, '..', 'src/renderer/index.js'),
   output: {
     filename: 'renderer.[hash].js',
-    path: config.distRenderer
+    path: config.buildRenderer
   },
   resolve: {
     extensions: ['.js', '.jsx', '.json'],

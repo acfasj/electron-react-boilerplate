@@ -1,14 +1,15 @@
 {
   "name": "electron-react-boilerplate",
   "version": "0.0.1",
-  "main": "./dist-main/main.js",
+  "main": "./build/main.js",
   "license": "MIT",
   "scripts": {
-    "dev:main:live-reload": "nodemon --watch ./dist-main/main.js --exec 'yarn electron .'",
+    "dev:main:live-reload": "nodemon --watch ./build/main.js --exec 'yarn electron .'",
     "dev:main:watch": "webpack -w --config scripts/webpack.main.dev.js",
     "dev:renderer": "webpack-dev-server --config scripts/webpack.renderer.dev.js",
     "build:renderer": "webpack --config scripts/webpack.renderer.prod.js",
-    "build:main": "webpack --config scripts/webpack.main.prod.js"
+    "build:main": "webpack --config scripts/webpack.main.prod.js",
+    "build": "yarn build:renderer && yarn build:main"
   },
   "devDependencies": {
     "@babel/core": "^7.4.4",
